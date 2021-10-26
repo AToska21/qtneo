@@ -2266,6 +2266,71 @@ class PlayState extends MusicBeatState
 					StrumPlayAnim(true, Std.int(Math.abs(daNote.noteData)) % 4, time);
 					daNote.hitByOpponent = true;
 
+					var animToPlay:String = '';
+					switch(Math.abs(daNote.noteData))
+					{
+						case 0:
+							animToPlay = 'singLEFT';
+							if(CoolUtil.difficultyString() == 'EASY'){
+								health -= 0;
+							}
+							else{
+								if(health > 0.4){
+									if(daNote.isSustainNote){
+										health -= 0.019;
+									}
+									else{
+										health -=0.03;
+									}
+								}
+							}
+						case 1:
+							animToPlay = 'singRIGHT';
+							if(CoolUtil.difficultyString() == 'EASY'){
+								health -= 0;
+							}
+							else{
+								if(health > 0.4){
+									if(daNote.isSustainNote){
+										health -= 0.019;
+									}
+									else{
+										health -=0.03;
+									}
+								}
+							}
+						case 2:
+							animToPlay = 'singUP';
+							if(CoolUtil.difficultyString() == 'EASY'){
+								health -= 0;
+							}
+							else{
+								if(health > 0.4){
+									if(daNote.isSustainNote){
+										health -= 0.019;
+									}
+									else{
+										health -=0.03;
+									}
+								}
+							}
+						case 1:
+							animToPlay = 'singRIGHT';
+							if(CoolUtil.difficultyString() == 'EASY'){
+								health -= 0;
+							}
+							else{
+								if(health > 0.4){
+									if(daNote.isSustainNote){
+										health -= 0.019;
+									}
+									else{
+										health -=0.03;
+									}
+								}
+							}
+					}
+
 					callOnLuas('opponentNoteHit', [notes.members.indexOf(daNote), Math.abs(daNote.noteData), daNote.noteType, daNote.isSustainNote]);
 
 					if (!daNote.isSustainNote)
