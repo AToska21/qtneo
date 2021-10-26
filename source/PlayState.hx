@@ -2314,7 +2314,7 @@ class PlayState extends MusicBeatState
 									}
 								}
 							}
-						case 4:
+						case 3:
 							animToPlay = 'singDOWN';
 							if(CoolUtil.difficultyString() == 'EASY'){
 								health -= 0;
